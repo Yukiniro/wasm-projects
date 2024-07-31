@@ -5,8 +5,8 @@ emcc -v
 
 # configure FFMpeg with Emscripten
 CFLAGS="-s USE_PTHREADS"
-LDFLAGS="$CFLAGS -s INITIAL_MEMORY=33554432"
-ARGS=(
+LDFLAGS="$CFLAGS -s INITIAL_MEMORY=33554432" # 33554432 bytes = 32 MB
+CONFIG_ARGS=(
   --target-os=none        # use none to prevent any os specific configurations
   --arch=x86_32           # use x86_32 to achieve minimal architectural optimization
   --enable-cross-compile  # enable cross compile
@@ -27,7 +27,7 @@ ARGS=(
   --objcc=emcc
   --dep-cc=emcc
 )
-emconfigure ./configure "${ARGS[@]}"
+emconfigure ./configure "${CONFIG_ARGS[@]}"
 
 # build dependencies
 emmake make -j4
