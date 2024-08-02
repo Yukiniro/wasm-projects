@@ -5,3 +5,5 @@ mkdir -p dist
 
 # 编译 hello_world.c
 emcc hello_world.c -o dist/hello_world.html
+
+echo "Build complete!"
