@@ -6,7 +6,7 @@ FROM emscripten/emsdk:latest
 WORKDIR /app
 
 # 复制当前目录的所有文件到工作目录
-# COPY . .
+COPY . .
 
 # 运行 run_hello_world.sh 脚本
 CMD ["sh", "-c", "/app/run_hello_world.sh"]
